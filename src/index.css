@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* Subtle pitch-like radial glow behind everything */
+  background:
+    radial-gradient(1200px 600px at 50% -10%, rgba(16, 185, 129, 0.12), transparent 60%),
+    #0b1120;
+  color: #e5e7eb;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent accidental horizontal scroll on small screens */
+#root {
+  overflow-x: hidden;
+}
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: perspective(600px) rotateY(90deg) scale(0.85);
+  }
+  60% {
+    opacity: 1;
+    transform: perspective(600px) rotateY(-8deg) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(600px) rotateY(0) scale(1);
+  }
+}
+
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px 0 var(--glow-color, rgba(245, 197, 24, 0.5));
+  }
+  50% {
+    box-shadow: 0 0 26px 4px var(--glow-color, rgba(245, 197, 24, 0.8));
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-120%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-20deg);
+  }
+}
+
+@keyframes growX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ---------- Animation utilities ---------- */
+.anim-fade-up {
+  animation: fadeInUp 0.5s ease both;
+}
+.anim-card-reveal {
+  animation: cardReveal 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-pop {
+  animation: pop 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-float {
+  animation: floaty 3s ease-in-out infinite;
+}
+.anim-grow-x {
+  transform-origin: left;
+  animation: growX 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.anim-glow {
+  animation: glowPulse 2.4s ease-in-out infinite;
+}
+
+/* Sweeping shine used on high-rarity cards */
+.shine-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.shine-wrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  transform: translateX(-120%) skewX(-20deg);
+  animation: shine 3.2s ease-in-out infinite;
+  animation-delay: 1s;
+  pointer-events: none;
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
