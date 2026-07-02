@@ -54,9 +54,26 @@ export const RARITY = {
     text: 'text-amber-50',
     glowColor: 'rgba(239, 68, 68, 0.7)',
   },
+  'Egyptian Phenomena': {
+    label: 'Egyptian Phenomena',
+    weight: 4,
+    border: 'border-yellow-300',
+    ring: 'ring-yellow-300/70',
+    badgeBg: 'bg-gradient-to-r from-yellow-400 via-white to-red-500',
+    glow: 'shadow-yellow-400/70',
+    text: 'text-yellow-50',
+    glowColor: 'rgba(250, 204, 21, 0.75)',
+  },
 }
 
-export const RARITY_ORDER = ['Common', 'Rare', 'Epic', 'Icon', 'Egyptian Legend']
+export const RARITY_ORDER = [
+  'Common',
+  'Rare',
+  'Epic',
+  'Icon',
+  'Egyptian Legend',
+  'Egyptian Phenomena',
+]
 
 // Higher number = rarer. Used for "rarest card packed" and best/worst tie-breaks.
 export const RARITY_RANK = {
@@ -65,4 +82,5 @@ export const RARITY_RANK = {
   Epic: 3,
   Icon: 4,
   'Egyptian Legend': 5,
+  'Egyptian Phenomena': 6,
 }

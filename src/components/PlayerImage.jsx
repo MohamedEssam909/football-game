@@ -34,7 +34,7 @@ export default function PlayerImage({ player, className = '' }) {
       onError={() => setFailed(true)}
       // Focus the crop toward the upper body so faces sit centered in the
       // square rather than being cut off near the top edge.
-      className={`object-cover object-[center_25%] ${className}`}
+      className={`object-cover object-[center_18%] ${className}`}
     />
   )
 }

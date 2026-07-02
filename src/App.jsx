@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Home from './pages/Home.jsx'
 import Game from './pages/Game.jsx'
 import FinalSquad from './pages/FinalSquad.jsx'
+import TeamMatch from './pages/TeamMatch.jsx'
 
 // Top-level screen router. Kept intentionally simple (no router lib) for the
 // MVP: three screens and the squad result passed between them. `runId` forces a
@@ -10,8 +11,10 @@ export default function App() {
   const [screen, setScreen] = useState('home')
   const [result, setResult] = useState(null) // { squad, missedPlayers }
   const [runId, setRunId] = useState(0)
+  const [mode, setMode] = useState('classic')
 
-  function startGame() {
+  function startGame(nextMode = 'classic') {
+    setMode(nextMode)
     setResult(null)
     setRunId((id) => id + 1)
     setScreen('game')
@@ -30,7 +33,12 @@ export default function App() {
   return (
     <div className="min-h-screen">
       {screen === 'home' && <Home onStart={startGame} />}
-      {screen === 'game' && <Game key={runId} onFinish={finishGame} />}
+      {screen === 'game' && mode === 'team-match' && (
+        <TeamMatch key={`${mode}-${runId}`} onRestart={restart} />
+      )}
+      {screen === 'game' && mode !== 'team-match' && (
+        <Game key={`${mode}-${runId}`} mode={mode} onFinish={finishGame} />
+      )}
       {screen === 'final' && result && (
         <FinalSquad
           squad={result.squad}

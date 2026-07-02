@@ -11,9 +11,30 @@ const LUCK_CHANCE = { jackpot: 0.12, dud: 0.16 } // remainder is 'normal'
 
 // Multipliers applied to each rarity's base weight per luck tier.
 const LUCK_MULT = {
-  jackpot: { Common: 0.25, Rare: 0.7, Epic: 2.4, Icon: 4, 'Egyptian Legend': 3 },
-  dud: { Common: 3, Rare: 1.2, Epic: 0.4, Icon: 0.12, 'Egyptian Legend': 0.15 },
-  normal: { Common: 1, Rare: 1, Epic: 1, Icon: 1, 'Egyptian Legend': 1 },
+  jackpot: {
+    Common: 0.25,
+    Rare: 0.7,
+    Epic: 2.4,
+    Icon: 4,
+    'Egyptian Legend': 3,
+    'Egyptian Phenomena': 3.8,
+  },
+  dud: {
+    Common: 3,
+    Rare: 1.2,
+    Epic: 0.4,
+    Icon: 0.12,
+    'Egyptian Legend': 0.15,
+    'Egyptian Phenomena': 0.12,
+  },
+  normal: {
+    Common: 1,
+    Rare: 1,
+    Epic: 1,
+    Icon: 1,
+    'Egyptian Legend': 1,
+    'Egyptian Phenomena': 1,
+  },
 }
 
 // Per-position odds: once per set of boxes we jitter each rarity's weight so no

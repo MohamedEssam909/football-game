@@ -2,9 +2,10 @@ import { POSITIONS } from '../data/positions.js'
 
 // Top banner during the game: which position is being drafted, overall squad
 // progress, and how many opens remain for this position.
-export default function PositionHeader({ slot, index, total, opensUsed, maxOpens, phase }) {
+export default function PositionHeader({ slot, index, total, opensUsed, maxOpens, phase, mode }) {
   const positionName = POSITIONS[slot.position]?.name || slot.position
   const opensLeft = Math.max(0, maxOpens - opensUsed)
+  const isHiddenPick = mode === 'hidden-pick'
 
   return (
     <div className="flex flex-col items-center gap-3 text-center">
@@ -26,7 +27,11 @@ export default function PositionHeader({ slot, index, total, opensUsed, maxOpens
         ))}
       </div>
 
-      {phase === 'opening' ? (
+      {phase === 'opening' && isHiddenPick ? (
+        <p className="text-sm text-slate-300">
+          Choose the revealed player or gamble on the hidden one. Your choice is final.
+        </p>
+      ) : phase === 'opening' ? (
         <p className="text-sm text-slate-300">
           Opens left:{' '}
           <span className="font-bold text-white">

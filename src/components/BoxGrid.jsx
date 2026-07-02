@@ -9,13 +9,14 @@ export default function BoxGrid({
   chosenIndex,
   slotPosition,
   maxOpens,
+  canChooseIndex,
   onOpen,
   onChoose,
 }) {
   const opensExhausted = openedIndices.length >= maxOpens
 
   return (
-    <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+    <div className="mx-auto grid w-full max-w-5xl grid-cols-2 justify-items-center gap-3 sm:grid-cols-4 sm:gap-4">
       {boxes.map((box, i) => {
         let state = 'closed'
         if (phase === 'revealing') state = 'revealed'
@@ -29,6 +30,7 @@ export default function BoxGrid({
             state={state}
             slotPosition={slotPosition}
             canOpen={!opensExhausted}
+            canChoose={canChooseIndex ? canChooseIndex(i) : true}
             chosen={phase === 'revealing' && i === chosenIndex}
             onOpen={() => onOpen(i)}
             onChoose={() => onChoose(i)}

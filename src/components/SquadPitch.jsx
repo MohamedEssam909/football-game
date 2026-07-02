@@ -1,11 +1,12 @@
 import PlayerImage from './PlayerImage.jsx'
-import { getRarityStyle } from '../utils/getRarityColor.js'
+import { getFlag } from '../utils/getFlag.js'
 
 // Football pitch with each slot placed by its x/y percentage. Filled slots show
 // the player token; empty slots show a dashed placeholder with the slot label.
 // Used both as a small in-game preview and the large final view (`size`).
 export default function SquadPitch({ slots, squadBySlot, size = 'lg' }) {
-  const token = size === 'sm' ? 'w-9 sm:w-11' : 'w-14 sm:w-16'
+  const token = size === 'sm' ? 'w-11 sm:w-14' : 'w-16 sm:w-20'
+  const labelWidth = size === 'sm' ? 'max-w-[86px]' : 'max-w-[104px]'
 
   return (
     <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl border border-emerald-900 bg-gradient-to-b from-emerald-700 to-emerald-800">
@@ -27,17 +28,18 @@ export default function SquadPitch({ slots, squadBySlot, size = 'lg' }) {
             {entry ? (
               <>
                 <div
-                  className={`overflow-hidden rounded-full border-2 bg-slate-900 ${token} aspect-square ring-2 ${getRarityStyle(entry.player.rarity).border} ${getRarityStyle(entry.player.rarity).ring}`}
+                  className={`overflow-hidden rounded-full border-2 border-white/80 bg-slate-900 ${token} aspect-square ring-2 ring-black/30`}
                 >
                   <PlayerImage player={entry.player} className="h-full w-full" />
                 </div>
-                <div className="mt-0.5 max-w-[72px] truncate rounded bg-black/60 px-1 text-[9px] font-semibold text-white sm:text-[10px]">
-                  {entry.player.rating} {entry.player.name.split(' ').slice(-1)[0]}
+                <div className={`mt-1 ${labelWidth} truncate rounded bg-black/60 px-1.5 text-[10px] font-bold text-white sm:text-[11px]`}>
+                  {getFlag(entry.player.nationality)} {entry.player.rating}{' '}
+                  {entry.player.name.split(' ').slice(-1)[0]}
                 </div>
               </>
             ) : (
               <div
-                className={`flex ${token} aspect-square items-center justify-center rounded-full border-2 border-dashed border-white/40 bg-black/20 text-[10px] font-bold text-white/70`}
+                className={`flex ${token} aspect-square items-center justify-center rounded-full border-2 border-dashed border-white/40 bg-black/20 text-[11px] font-bold text-white/70`}
               >
                 {slot.label}
               </div>

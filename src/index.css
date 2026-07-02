@@ -126,6 +126,137 @@ body {
   animation: glowPulse 2.4s ease-in-out infinite;
 }
 
+/* ---------- FIFA/FC-inspired card surfaces ---------- */
+.fut-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--fut-accent);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.22), rgba(2, 6, 23, 0.74)),
+    var(--fut-surface);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+    inset 0 0 26px rgba(255, 255, 255, 0.08),
+    0 12px 22px rgba(0, 0, 0, 0.26);
+}
+
+.fut-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background:
+    linear-gradient(90deg, transparent, var(--fut-accent), transparent) top / 100% 3px no-repeat,
+    radial-gradient(circle at 50% 20%, var(--fut-aura), transparent 44%);
+}
+
+.fut-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.18), transparent 24%),
+    linear-gradient(180deg, transparent 52%, rgba(2, 6, 23, 0.46));
+  pointer-events: none;
+}
+
+.fut-card--common {
+  --fut-accent: rgba(226, 232, 240, 0.72);
+  --fut-aura: rgba(148, 163, 184, 0.38);
+  --fut-surface:
+    linear-gradient(160deg, #334155 0%, #0f172a 100%);
+}
+
+.fut-card--rare {
+  --fut-accent: rgba(56, 189, 248, 0.82);
+  --fut-aura: rgba(56, 189, 248, 0.42);
+  --fut-surface:
+    linear-gradient(160deg, #075985 0%, #0f172a 100%);
+}
+
+.fut-card--epic {
+  --fut-accent: rgba(192, 132, 252, 0.86);
+  --fut-aura: rgba(168, 85, 247, 0.45);
+  --fut-surface:
+    linear-gradient(160deg, #581c87 0%, #111827 100%);
+}
+
+.fut-card--icon {
+  --fut-accent: rgba(245, 197, 24, 0.9);
+  --fut-aura: rgba(245, 197, 24, 0.42);
+  --fut-surface:
+    linear-gradient(160deg, #92400e 0%, #111827 100%);
+}
+
+.fut-card--legend {
+  --fut-accent: rgba(251, 191, 36, 0.92);
+  --fut-aura: rgba(239, 68, 68, 0.48);
+  --fut-surface:
+    linear-gradient(160deg, #991b1b 0%, #111827 100%);
+}
+
+.fut-card--phenomena {
+  --fut-accent: rgba(250, 204, 21, 0.96);
+  --fut-aura: rgba(250, 204, 21, 0.52);
+  --fut-surface:
+    linear-gradient(160deg, #713f12 0%, #991b1b 42%, #020617 100%);
+}
+
+.fut-card-back {
+  --fut-accent: rgba(52, 211, 153, 0.82);
+  --fut-aura: rgba(16, 185, 129, 0.42);
+  --fut-surface:
+    linear-gradient(160deg, #052e2b 0%, #047857 46%, #020617 100%);
+  color: white;
+}
+
+.fut-card-back::after {
+  background:
+    radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.44), transparent 30%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.07) 0 1px,
+      transparent 1px 9px
+    ),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(15, 23, 42, 0.2));
+}
+
+.fut-rating-panel {
+  min-width: 2rem;
+  color: white;
+  text-shadow:
+    0 1px 2px rgba(2, 6, 23, 0.85),
+    0 0 10px rgba(2, 6, 23, 0.45);
+}
+
+.fut-portrait {
+  min-height: 0;
+  border-radius: 12px 12px 9px 9px;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.28), transparent 48%),
+    rgba(15, 23, 42, 0.36);
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16),
+    0 7px 12px rgba(2, 6, 23, 0.24);
+}
+
+.fut-info-panel {
+  border-radius: 11px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(2, 6, 23, 0.18));
+  padding: 0.35rem 0.35rem 0.2rem;
+  color: white;
+}
+
+.fut-stats {
+  border-top: 1px solid rgba(255, 255, 255, 0.22);
+  color: white;
+  align-content: center;
+}
+
 /* Sweeping shine used on high-rarity cards */
 .shine-wrap {
   position: relative;

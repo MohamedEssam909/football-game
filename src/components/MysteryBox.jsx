@@ -11,6 +11,7 @@ export default function MysteryBox({
   index,
   slotPosition,
   canOpen,
+  canChoose = true,
   chosen,
   onOpen,
   onChoose,
@@ -23,16 +24,21 @@ export default function MysteryBox({
         type="button"
         onClick={onOpen}
         disabled={!canOpen}
-        className={`flex aspect-[3/4] w-full flex-col items-center justify-center rounded-2xl border-2 border-dashed text-center transition
+        className={`fut-card fut-card-back flex aspect-[3/4] w-full max-w-[184px] flex-col items-center justify-center p-4 text-center transition sm:max-w-[214px]
           ${
             canOpen
-              ? 'cursor-pointer border-emerald-400/70 bg-gradient-to-br from-emerald-600/30 to-slate-800 hover:scale-[1.03] hover:from-emerald-500/50 active:scale-95'
-              : 'cursor-not-allowed border-slate-700 bg-slate-800/60 opacity-60'
+              ? 'cursor-pointer hover:scale-[1.03] hover:brightness-110 active:scale-95'
+              : 'cursor-not-allowed opacity-55 grayscale'
           }`}
       >
-        <span className={`text-4xl sm:text-5xl ${canOpen ? 'anim-float' : ''}`}>📦</span>
-        <span className="mt-2 text-xs font-semibold text-slate-300">Box {index + 1}</span>
-        <span className="text-[10px] text-slate-400">
+        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-100/80">
+          Mystery
+        </span>
+        <span className={`mt-4 text-4xl sm:text-5xl ${canOpen ? 'anim-float' : ''}`}>📦</span>
+        <span className="mt-4 text-xl font-black uppercase tracking-wide text-white">
+          Box {index + 1}
+        </span>
+        <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.18em] text-emerald-100/70">
           {canOpen ? 'Tap to open' : 'Locked'}
         </span>
       </button>
@@ -57,7 +63,7 @@ export default function MysteryBox({
         <PlayerCard player={box.player} slotPosition={slotPosition} />
       </div>
 
-      {state === 'opened' && (
+      {state === 'opened' && canChoose && (
         <button
           type="button"
           onClick={onChoose}
@@ -65,6 +71,12 @@ export default function MysteryBox({
         >
           Choose
         </button>
+      )}
+
+      {state === 'opened' && !canChoose && (
+        <div className="mt-2 rounded-xl border border-slate-700 bg-slate-900/70 px-3 py-2 text-center text-xs font-bold uppercase tracking-wide text-slate-400">
+          Locked by newer box
+        </div>
       )}
 
       {chosen && (
