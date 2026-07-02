@@ -12,13 +12,6 @@ const STAT_ROWS = [
   ['PHY', 'physical'],
 ]
 
-// Glow colour per elite rarity, fed to the pulsing/shine CSS.
-const GLOW_COLOR = {
-  Epic: 'rgba(168, 85, 247, 0.6)',
-  Icon: 'rgba(245, 197, 24, 0.7)',
-  'Egyptian Legend': 'rgba(239, 68, 68, 0.7)',
-}
-
 // Full player card: photo, rarity frame, overall, position, name, nation and
 // the six FIFA-style stats. `slotPosition` (optional) shows where the card is
 // being played so an off-position pick is visible.
@@ -28,7 +21,7 @@ export default function PlayerCard({ player, slotPosition, className = '' }) {
 
   return (
     <div
-      style={isElite ? { '--glow-color': GLOW_COLOR[player.rarity] } : undefined}
+      style={isElite ? { '--glow-color': style.glowColor } : undefined}
       className={`flex w-full flex-col rounded-2xl border-2 bg-slate-900/80 p-3 shadow-lg ring-1 ${style.border} ${style.ring} ${style.glow} ${
         isElite ? 'shine-wrap anim-glow' : ''
       } ${className}`}

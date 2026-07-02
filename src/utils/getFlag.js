@@ -26,6 +26,13 @@ const NATION_FLAGS = {
   Senegal: '🇸🇳',
   Cameroon: '🇨🇲',
   Algeria: '🇩🇿',
+  Georgia: '🇬🇪',
+  Hungary: '🇭🇺',
+  Austria: '🇦🇹',
+  Nigeria: '🇳🇬',
+  Serbia: '🇷🇸',
+  Denmark: '🇩🇰',
+  Switzerland: '🇨🇭',
 }
 
 export function getFlag(nationality) {

@@ -112,6 +112,48 @@ export const PLAYERS = [
   { id: 'aboutrika', name: 'Mohamed Aboutrika', nationality: 'Egypt', position: 'CAM', secondaryPositions: ['ST'], club: 'Al Ahly', era: 'Legend', rating: 90, pace: 80, shooting: 84, passing: 88, dribbling: 89, defense: 55, physical: 74, rarity: 'Egyptian Legend', image: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Aboutrika2011.jpg' },
   { id: 'el_hadary', name: 'Essam El Hadary', nationality: 'Egypt', position: 'GK', secondaryPositions: [], club: 'Al Ahly', era: 'Legend', rating: 84, pace: 50, shooting: 25, passing: 55, dribbling: 50, defense: 85, physical: 82, rarity: 'Egyptian Legend', image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Essam_El-Hadary.jpg/330px-Essam_El-Hadary.jpg' },
   { id: 'wael_gomaa', name: 'Wael Gomaa', nationality: 'Egypt', position: 'CB', secondaryPositions: [], club: 'Al Ahly', era: 'Legend', rating: 85, pace: 68, shooting: 40, passing: 68, dribbling: 66, defense: 86, physical: 82, rarity: 'Egyptian Legend', image: 'https://upload.wikimedia.org/wikipedia/commons/f/fb/Wael_Gomaa.jpg' },
+
+  // ---------------- Expanded roster (photos from PLAYER_IMAGES) ----------------
+  // Goalkeepers
+  { id: 'emi_martinez', name: 'Emiliano Martínez', nationality: 'Argentina', position: 'GK', secondaryPositions: [], club: 'Aston Villa', era: 'Modern', rating: 85, pace: 46, shooting: 25, passing: 55, dribbling: 50, defense: 85, physical: 84, rarity: 'Rare' },
+  { id: 'raya', name: 'David Raya', nationality: 'Spain', position: 'GK', secondaryPositions: [], club: 'Arsenal', era: 'Modern', rating: 83, pace: 45, shooting: 25, passing: 62, dribbling: 52, defense: 83, physical: 80, rarity: 'Common' },
+  // Right Backs
+  { id: 'frimpong', name: 'Jeremie Frimpong', nationality: 'Netherlands', position: 'RB', secondaryPositions: ['RWB', 'RW'], club: 'Liverpool', era: 'Modern', rating: 81, pace: 93, shooting: 62, passing: 70, dribbling: 82, defense: 72, physical: 70, rarity: 'Common' },
+  { id: 'porro', name: 'Pedro Porro', nationality: 'Spain', position: 'RB', secondaryPositions: ['RWB'], club: 'Tottenham Hotspur', era: 'Modern', rating: 82, pace: 84, shooting: 68, passing: 80, dribbling: 80, defense: 76, physical: 72, rarity: 'Common' },
+  // Center Backs
+  { id: 'alaba', name: 'David Alaba', nationality: 'Austria', position: 'CB', secondaryPositions: ['LB', 'CDM'], club: 'Real Madrid', era: 'Modern', rating: 84, pace: 74, shooting: 62, passing: 80, dribbling: 78, defense: 84, physical: 76, rarity: 'Rare' },
+  { id: 'gvardiol', name: 'Joško Gvardiol', nationality: 'Croatia', position: 'CB', secondaryPositions: ['LB'], club: 'Manchester City', era: 'Modern', rating: 84, pace: 84, shooting: 50, passing: 72, dribbling: 76, defense: 84, physical: 82, rarity: 'Rare' },
+  { id: 'araujo', name: 'Ronald Araújo', nationality: 'Uruguay', position: 'CB', secondaryPositions: ['RB'], club: 'Barcelona', era: 'Modern', rating: 85, pace: 84, shooting: 45, passing: 68, dribbling: 72, defense: 85, physical: 86, rarity: 'Rare' },
+  { id: 'lisandro', name: 'Lisandro Martínez', nationality: 'Argentina', position: 'CB', secondaryPositions: ['LB'], club: 'Manchester United', era: 'Modern', rating: 82, pace: 76, shooting: 45, passing: 74, dribbling: 74, defense: 83, physical: 74, rarity: 'Common' },
+  // Left Backs
+  { id: 'balde', name: 'Alejandro Balde', nationality: 'Spain', position: 'LB', secondaryPositions: ['LWB'], club: 'Barcelona', era: 'Modern', rating: 81, pace: 90, shooting: 55, passing: 72, dribbling: 80, defense: 74, physical: 70, rarity: 'Common' },
+  { id: 'nuno_mendes', name: 'Nuno Mendes', nationality: 'Portugal', position: 'LB', secondaryPositions: ['LWB'], club: 'Paris SG', era: 'Modern', rating: 84, pace: 90, shooting: 60, passing: 76, dribbling: 82, defense: 79, physical: 78, rarity: 'Rare' },
+  // Defensive Mids
+  { id: 'tchouameni', name: 'Aurélien Tchouaméni', nationality: 'France', position: 'CDM', secondaryPositions: ['CM', 'CB'], club: 'Real Madrid', era: 'Modern', rating: 85, pace: 68, shooting: 72, passing: 80, dribbling: 78, defense: 84, physical: 85, rarity: 'Rare' },
+  { id: 'camavinga', name: 'Eduardo Camavinga', nationality: 'France', position: 'CDM', secondaryPositions: ['CM', 'LB'], club: 'Real Madrid', era: 'Modern', rating: 83, pace: 82, shooting: 66, passing: 78, dribbling: 84, defense: 80, physical: 78, rarity: 'Common' },
+  { id: 'kimmich', name: 'Joshua Kimmich', nationality: 'Germany', position: 'CDM', secondaryPositions: ['RB', 'CM'], club: 'Bayern München', era: 'Modern', rating: 88, pace: 68, shooting: 76, passing: 88, dribbling: 84, defense: 82, physical: 76, rarity: 'Epic' },
+  // Central Mids
+  { id: 'frenkie', name: 'Frenkie de Jong', nationality: 'Netherlands', position: 'CM', secondaryPositions: ['CDM'], club: 'Barcelona', era: 'Modern', rating: 87, pace: 78, shooting: 72, passing: 86, dribbling: 88, defense: 76, physical: 80, rarity: 'Rare' },
+  { id: 'enzo', name: 'Enzo Fernández', nationality: 'Argentina', position: 'CM', secondaryPositions: ['CDM'], club: 'Chelsea', era: 'Modern', rating: 84, pace: 72, shooting: 76, passing: 84, dribbling: 80, defense: 76, physical: 78, rarity: 'Rare' },
+  // Attacking Mids
+  { id: 'palmer', name: 'Cole Palmer', nationality: 'England', position: 'CAM', secondaryPositions: ['RW', 'CM'], club: 'Chelsea', era: 'Modern', rating: 85, pace: 76, shooting: 82, passing: 82, dribbling: 85, defense: 48, physical: 68, rarity: 'Rare' },
+  { id: 'szoboszlai', name: 'Dominik Szoboszlai', nationality: 'Hungary', position: 'CAM', secondaryPositions: ['CM', 'RW'], club: 'Liverpool', era: 'Modern', rating: 83, pace: 80, shooting: 80, passing: 80, dribbling: 80, defense: 60, physical: 76, rarity: 'Rare' },
+  { id: 'mount', name: 'Mason Mount', nationality: 'England', position: 'CAM', secondaryPositions: ['CM'], club: 'Manchester United', era: 'Modern', rating: 80, pace: 74, shooting: 76, passing: 80, dribbling: 80, defense: 62, physical: 70, rarity: 'Common' },
+  // Right Wings
+  { id: 'saka', name: 'Bukayo Saka', nationality: 'England', position: 'RW', secondaryPositions: ['LW'], club: 'Arsenal', era: 'Modern', rating: 87, pace: 86, shooting: 82, passing: 82, dribbling: 87, defense: 54, physical: 70, rarity: 'Epic' },
+  { id: 'chiesa', name: 'Federico Chiesa', nationality: 'Italy', position: 'RW', secondaryPositions: ['LW', 'ST'], club: 'Liverpool', era: 'Modern', rating: 82, pace: 88, shooting: 78, passing: 74, dribbling: 84, defense: 45, physical: 74, rarity: 'Common' },
+  // Left Wings
+  { id: 'sane', name: 'Leroy Sané', nationality: 'Germany', position: 'LW', secondaryPositions: ['RW'], club: 'Al-Nassr', era: 'Modern', rating: 84, pace: 92, shooting: 80, passing: 78, dribbling: 86, defense: 38, physical: 68, rarity: 'Rare' },
+  { id: 'leao', name: 'Rafael Leão', nationality: 'Portugal', position: 'LW', secondaryPositions: ['ST'], club: 'AC Milan', era: 'Modern', rating: 85, pace: 93, shooting: 80, passing: 76, dribbling: 87, defense: 36, physical: 78, rarity: 'Rare' },
+  { id: 'kvara', name: 'Khvicha Kvaratskhelia', nationality: 'Georgia', position: 'LW', secondaryPositions: ['RW'], club: 'Paris SG', era: 'Modern', rating: 86, pace: 86, shooting: 80, passing: 80, dribbling: 89, defense: 42, physical: 72, rarity: 'Rare' },
+  { id: 'coman', name: 'Kingsley Coman', nationality: 'France', position: 'LW', secondaryPositions: ['RW'], club: 'Bayern München', era: 'Modern', rating: 83, pace: 92, shooting: 74, passing: 76, dribbling: 86, defense: 40, physical: 70, rarity: 'Common' },
+  { id: 'rashford', name: 'Marcus Rashford', nationality: 'England', position: 'LW', secondaryPositions: ['ST'], club: 'Aston Villa', era: 'Modern', rating: 82, pace: 90, shooting: 80, passing: 72, dribbling: 82, defense: 40, physical: 74, rarity: 'Common' },
+  // Strikers
+  { id: 'osimhen', name: 'Victor Osimhen', nationality: 'Nigeria', position: 'ST', secondaryPositions: [], club: 'Galatasaray', era: 'Modern', rating: 88, pace: 90, shooting: 87, passing: 68, dribbling: 80, defense: 42, physical: 84, rarity: 'Epic' },
+  { id: 'lautaro', name: 'Lautaro Martínez', nationality: 'Argentina', position: 'ST', secondaryPositions: [], club: 'Inter', era: 'Modern', rating: 87, pace: 84, shooting: 87, passing: 72, dribbling: 84, defense: 45, physical: 82, rarity: 'Epic' },
+  { id: 'nunez', name: 'Darwin Núñez', nationality: 'Uruguay', position: 'ST', secondaryPositions: ['LW'], club: 'Liverpool', era: 'Modern', rating: 82, pace: 89, shooting: 82, passing: 66, dribbling: 78, defense: 40, physical: 84, rarity: 'Rare' },
+  { id: 'isak', name: 'Alexander Isak', nationality: 'Sweden', position: 'ST', secondaryPositions: [], club: 'Newcastle United', era: 'Modern', rating: 84, pace: 84, shooting: 84, passing: 72, dribbling: 84, defense: 38, physical: 76, rarity: 'Common' },
+  { id: 'gabriel_jesus', name: 'Gabriel Jesus', nationality: 'Brazil', position: 'ST', secondaryPositions: ['RW'], club: 'Arsenal', era: 'Modern', rating: 81, pace: 82, shooting: 78, passing: 76, dribbling: 84, defense: 45, physical: 72, rarity: 'Common' },
 ]
 
 // Prefer the name-matched Wikipedia photo over the legacy inline URL.

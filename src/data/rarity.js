@@ -5,13 +5,14 @@
 export const RARITY = {
   Common: {
     label: 'Common',
-    weight: 40,
+    weight: 48,
     // Tailwind classes; kept here so getRarityColor stays a thin lookup.
     border: 'border-slate-400',
     ring: 'ring-slate-400/40',
     badgeBg: 'bg-slate-500',
     glow: 'shadow-slate-500/20',
     text: 'text-slate-100',
+    glowColor: 'rgba(148, 163, 184, 0.45)', // CSS var for the glow-pulse animation
   },
   Rare: {
     label: 'Rare',
@@ -21,33 +22,37 @@ export const RARITY = {
     badgeBg: 'bg-sky-500',
     glow: 'shadow-sky-500/40',
     text: 'text-sky-50',
+    glowColor: 'rgba(56, 189, 248, 0.5)',
   },
   Epic: {
     label: 'Epic',
-    weight: 20,
+    weight: 16,
     border: 'border-purple-400',
     ring: 'ring-purple-400/50',
     badgeBg: 'bg-purple-500',
     glow: 'shadow-purple-500/50',
     text: 'text-purple-50',
+    glowColor: 'rgba(168, 85, 247, 0.6)',
   },
   Icon: {
     label: 'Icon',
-    weight: 10,
+    weight: 7,
     border: 'border-amber-400',
     ring: 'ring-amber-400/60',
     badgeBg: 'bg-amber-500',
     glow: 'shadow-amber-500/60',
     text: 'text-amber-50',
+    glowColor: 'rgba(245, 197, 24, 0.7)',
   },
   'Egyptian Legend': {
     label: 'Egyptian Legend',
-    weight: 6,
+    weight: 5,
     border: 'border-red-500',
     ring: 'ring-red-500/60',
     badgeBg: 'bg-gradient-to-r from-red-600 to-amber-500',
     glow: 'shadow-red-500/60',
     text: 'text-amber-50',
+    glowColor: 'rgba(239, 68, 68, 0.7)',
   },
 }
 
