@@ -1,5 +1,5 @@
 import PlayerImage from './PlayerImage.jsx'
-import { getFlag } from '../utils/getFlag.js'
+import NationLogoBadge from './NationLogoBadge.jsx'
 
 // Football pitch with each slot placed by its x/y percentage. Filled slots show
 // the player token; empty slots show a dashed placeholder with the slot label.
@@ -28,13 +28,15 @@ export default function SquadPitch({ slots, squadBySlot, size = 'lg' }) {
             {entry ? (
               <>
                 <div
-                  className={`overflow-hidden rounded-full border-2 border-white/80 bg-slate-900 ${token} aspect-square ring-2 ring-black/30`}
+                  className={`relative overflow-hidden rounded-full border-2 border-white/80 bg-slate-900 ${token} aspect-square ring-2 ring-black/30`}
                 >
                   <PlayerImage player={entry.player} className="h-full w-full" />
+                  <span className="absolute bottom-0 right-0">
+                    <NationLogoBadge nationality={entry.player.nationality} />
+                  </span>
                 </div>
                 <div className={`mt-1 ${labelWidth} truncate rounded bg-black/60 px-1.5 text-[10px] font-bold text-white sm:text-[11px]`}>
-                  {getFlag(entry.player.nationality)} {entry.player.rating}{' '}
-                  {entry.player.name.split(' ').slice(-1)[0]}
+                  {entry.player.rating} {entry.player.name.split(' ').slice(-1)[0]}
                 </div>
               </>
             ) : (
