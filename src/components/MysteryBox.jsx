@@ -1,6 +1,5 @@
 import PlayerCard from './PlayerCard.jsx'
 import { RARITY_RANK } from '../data/rarity.js'
-import { getRarityStyle } from '../utils/getRarityColor.js'
 
 // A single mystery box. Three visual states:
 //  - 'closed'  : unopened, click to open (disabled when opens are used up)
@@ -16,28 +15,24 @@ export default function MysteryBox({
   onOpen,
   onChoose,
 }) {
-  // The closed box is tinted by the hidden card's rarity — a colour hint about
-  // the level inside, without revealing who it is.
-  const hintStyle = getRarityStyle(box.player.rarity)
-
   if (state === 'closed') {
+    // Neutral styling — every closed box looks identical so the rarity is a
+    // surprise until it's opened.
     return (
       <button
         type="button"
         onClick={onOpen}
         disabled={!canOpen}
-        style={{ '--glow-color': hintStyle.glowColor }}
-        className={`flex aspect-[3/4] w-full flex-col items-center justify-center rounded-2xl border-2 border-dashed bg-slate-800/70 text-center shadow-lg ring-1 transition
-          ${hintStyle.border} ${hintStyle.ring} ${hintStyle.glow}
+        className={`flex aspect-[3/4] w-full flex-col items-center justify-center rounded-2xl border-2 border-dashed text-center transition
           ${
             canOpen
-              ? 'anim-glow cursor-pointer hover:scale-[1.03] hover:brightness-125 active:scale-95'
-              : 'cursor-not-allowed opacity-60 grayscale'
+              ? 'cursor-pointer border-emerald-400/70 bg-gradient-to-br from-emerald-600/30 to-slate-800 hover:scale-[1.03] hover:from-emerald-500/50 active:scale-95'
+              : 'cursor-not-allowed border-slate-700 bg-slate-800/60 opacity-60'
           }`}
       >
         <span className={`text-4xl sm:text-5xl ${canOpen ? 'anim-float' : ''}`}>📦</span>
-        <span className="mt-2 text-xs font-semibold text-slate-200">Box {index + 1}</span>
-        <span className={`text-[10px] font-semibold ${hintStyle.text}`}>
+        <span className="mt-2 text-xs font-semibold text-slate-300">Box {index + 1}</span>
+        <span className="text-[10px] text-slate-400">
           {canOpen ? 'Tap to open' : 'Locked'}
         </span>
       </button>
