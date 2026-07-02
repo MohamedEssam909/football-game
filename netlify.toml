@@ -1,0 +1,17 @@
+# Netlify build config. Vite is auto-detected, but pinning these keeps builds
+# reproducible regardless of Netlify's default detection or Node version.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  # Vite 6 + Tailwind v4 need Node 18+. Pin an LTS to avoid surprises.
+  NODE_VERSION = "20"
+
+# SPA fallback: this app renders everything from index.html (no client-side
+# router), so a refresh on "/" already works. This rule is harmless and
+# future-proofs deep links if routing is added later.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
