@@ -154,6 +154,40 @@ export const PLAYERS = [
   { id: 'nunez', name: 'Darwin Núñez', nationality: 'Uruguay', position: 'ST', secondaryPositions: ['LW'], club: 'Liverpool', era: 'Modern', rating: 82, pace: 89, shooting: 82, passing: 66, dribbling: 78, defense: 40, physical: 84, rarity: 'Rare' },
   { id: 'isak', name: 'Alexander Isak', nationality: 'Sweden', position: 'ST', secondaryPositions: [], club: 'Newcastle United', era: 'Modern', rating: 84, pace: 84, shooting: 84, passing: 72, dribbling: 84, defense: 38, physical: 76, rarity: 'Common' },
   { id: 'gabriel_jesus', name: 'Gabriel Jesus', nationality: 'Brazil', position: 'ST', secondaryPositions: ['RW'], club: 'Arsenal', era: 'Modern', rating: 81, pace: 82, shooting: 78, passing: 76, dribbling: 84, defense: 45, physical: 72, rarity: 'Common' },
+
+  // ---------------- Squad players (lower-rated, widen the score range) ----------------
+  // Goalkeepers
+  { id: 'fabianski', name: 'Łukasz Fabiański', nationality: 'Poland', position: 'GK', secondaryPositions: [], club: 'West Ham United', era: 'Modern', rating: 75, pace: 42, shooting: 24, passing: 50, dribbling: 46, defense: 75, physical: 74, rarity: 'Common' },
+  { id: 'krul', name: 'Tim Krul', nationality: 'Netherlands', position: 'GK', secondaryPositions: [], club: 'Luton Town', era: 'Modern', rating: 72, pace: 40, shooting: 22, passing: 48, dribbling: 44, defense: 72, physical: 72, rarity: 'Common' },
+  // Full Backs
+  { id: 'clyne', name: 'Nathaniel Clyne', nationality: 'England', position: 'RB', secondaryPositions: ['RWB'], club: 'Crystal Palace', era: 'Modern', rating: 71, pace: 78, shooting: 55, passing: 66, dribbling: 70, defense: 71, physical: 70, rarity: 'Common' },
+  { id: 'aurier', name: 'Serge Aurier', nationality: 'Ivory Coast', position: 'RB', secondaryPositions: ['RWB'], club: 'Galatasaray', era: 'Modern', rating: 73, pace: 82, shooting: 58, passing: 68, dribbling: 74, defense: 72, physical: 76, rarity: 'Common' },
+  { id: 'young', name: 'Ashley Young', nationality: 'England', position: 'LB', secondaryPositions: ['RB', 'LM'], club: 'Everton', era: 'Modern', rating: 70, pace: 68, shooting: 62, passing: 72, dribbling: 72, defense: 68, physical: 68, rarity: 'Common' },
+  { id: 'rose', name: 'Danny Rose', nationality: 'England', position: 'LB', secondaryPositions: ['LWB'], club: 'Free Agent', era: 'Modern', rating: 71, pace: 80, shooting: 55, passing: 66, dribbling: 72, defense: 70, physical: 74, rarity: 'Common' },
+  // Center Backs
+  { id: 'dier', name: 'Eric Dier', nationality: 'England', position: 'CB', secondaryPositions: ['CDM'], club: 'AS Monaco', era: 'Modern', rating: 77, pace: 58, shooting: 50, passing: 72, dribbling: 66, defense: 78, physical: 80, rarity: 'Common' },
+  { id: 'mings', name: 'Tyrone Mings', nationality: 'England', position: 'CB', secondaryPositions: [], club: 'Aston Villa', era: 'Modern', rating: 76, pace: 74, shooting: 45, passing: 66, dribbling: 66, defense: 77, physical: 82, rarity: 'Common' },
+  { id: 'dawson', name: 'Craig Dawson', nationality: 'England', position: 'CB', secondaryPositions: [], club: 'Wolverhampton', era: 'Modern', rating: 72, pace: 60, shooting: 48, passing: 62, dribbling: 60, defense: 74, physical: 78, rarity: 'Common' },
+  // Defensive / Central Mids
+  { id: 'henderson_j', name: 'Jordan Henderson', nationality: 'England', position: 'CDM', secondaryPositions: ['CM'], club: 'Brentford', era: 'Modern', rating: 76, pace: 60, shooting: 66, passing: 78, dribbling: 72, defense: 74, physical: 74, rarity: 'Common' },
+  { id: 'shelvey', name: 'Jonjo Shelvey', nationality: 'England', position: 'CDM', secondaryPositions: ['CM'], club: 'Free Agent', era: 'Modern', rating: 71, pace: 52, shooting: 70, passing: 78, dribbling: 70, defense: 64, physical: 70, rarity: 'Common' },
+  { id: 'barkley', name: 'Ross Barkley', nationality: 'England', position: 'CM', secondaryPositions: ['CAM'], club: 'Aston Villa', era: 'Modern', rating: 75, pace: 72, shooting: 74, passing: 74, dribbling: 78, defense: 60, physical: 76, rarity: 'Common' },
+  { id: 'cleverley', name: 'Tom Cleverley', nationality: 'England', position: 'CM', secondaryPositions: ['CAM'], club: 'Free Agent', era: 'Modern', rating: 68, pace: 60, shooting: 62, passing: 72, dribbling: 70, defense: 58, physical: 62, rarity: 'Common' },
+  // Attacking Mids
+  { id: 'lingard', name: 'Jesse Lingard', nationality: 'England', position: 'CAM', secondaryPositions: ['RW'], club: 'FC Seoul', era: 'Modern', rating: 71, pace: 78, shooting: 70, passing: 72, dribbling: 78, defense: 48, physical: 62, rarity: 'Common' },
+  { id: 'dele', name: 'Dele Alli', nationality: 'England', position: 'CAM', secondaryPositions: ['CM'], club: 'Free Agent', era: 'Modern', rating: 69, pace: 68, shooting: 70, passing: 70, dribbling: 74, defense: 46, physical: 66, rarity: 'Common' },
+  // Wings
+  { id: 'townsend', name: 'Andros Townsend', nationality: 'England', position: 'RW', secondaryPositions: ['LW'], club: 'Free Agent', era: 'Modern', rating: 72, pace: 82, shooting: 70, passing: 68, dribbling: 78, defense: 40, physical: 64, rarity: 'Common' },
+  { id: 'walcott', name: 'Theo Walcott', nationality: 'England', position: 'RW', secondaryPositions: ['ST'], club: 'Free Agent', era: 'Modern', rating: 70, pace: 86, shooting: 70, passing: 64, dribbling: 74, defense: 34, physical: 60, rarity: 'Common' },
+  { id: 'redmond', name: 'Nathan Redmond', nationality: 'England', position: 'LW', secondaryPositions: ['RW'], club: 'Beşiktaş', era: 'Modern', rating: 73, pace: 84, shooting: 68, passing: 68, dribbling: 78, defense: 38, physical: 60, rarity: 'Common' },
+  { id: 'zaha', name: 'Wilfried Zaha', nationality: 'Ivory Coast', position: 'LW', secondaryPositions: ['RW', 'ST'], club: 'Charlotte FC', era: 'Modern', rating: 78, pace: 86, shooting: 74, passing: 70, dribbling: 84, defense: 36, physical: 70, rarity: 'Common' },
+  { id: 'pepe', name: 'Nicolas Pépé', nationality: 'Ivory Coast', position: 'RW', secondaryPositions: ['LW'], club: 'Villarreal', era: 'Modern', rating: 75, pace: 82, shooting: 74, passing: 70, dribbling: 82, defense: 38, physical: 64, rarity: 'Common' },
+  // Strikers
+  { id: 'ings', name: 'Danny Ings', nationality: 'England', position: 'ST', secondaryPositions: [], club: 'West Ham United', era: 'Modern', rating: 74, pace: 74, shooting: 78, passing: 66, dribbling: 76, defense: 36, physical: 68, rarity: 'Common' },
+  { id: 'antonio', name: 'Michail Antonio', nationality: 'Jamaica', position: 'ST', secondaryPositions: ['RW'], club: 'West Ham United', era: 'Modern', rating: 74, pace: 82, shooting: 74, passing: 62, dribbling: 72, defense: 40, physical: 84, rarity: 'Common' },
+  { id: 'wood', name: 'Chris Wood', nationality: 'New Zealand', position: 'ST', secondaryPositions: [], club: 'Nottingham Forest', era: 'Modern', rating: 75, pace: 66, shooting: 78, passing: 58, dribbling: 66, defense: 40, physical: 82, rarity: 'Common' },
+  { id: 'austin', name: 'Charlie Austin', nationality: 'England', position: 'ST', secondaryPositions: [], club: 'Free Agent', era: 'Modern', rating: 67, pace: 58, shooting: 74, passing: 56, dribbling: 62, defense: 32, physical: 74, rarity: 'Common' },
+  { id: 'wilson', name: 'Callum Wilson', nationality: 'England', position: 'ST', secondaryPositions: [], club: 'West Ham United', era: 'Modern', rating: 76, pace: 82, shooting: 78, passing: 64, dribbling: 74, defense: 38, physical: 74, rarity: 'Common' },
 ]
 
 // Prefer the name-matched Wikipedia photo over the legacy inline URL.

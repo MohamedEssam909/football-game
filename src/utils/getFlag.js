@@ -33,6 +33,9 @@ const NATION_FLAGS = {
   Serbia: '🇷🇸',
   Denmark: '🇩🇰',
   Switzerland: '🇨🇭',
+  'Ivory Coast': '🇨🇮',
+  Jamaica: '🇯🇲',
+  'New Zealand': '🇳🇿',
 }
 
 export function getFlag(nationality) {

@@ -3,9 +3,21 @@ import { RARITY_RANK } from '../data/rarity.js'
 import { getPositionFit } from './positionFit.js'
 import { calculateChemistry } from './calculateChemistry.js'
 
-// Weights from the game plan: player quality dominates, chemistry and balance
-// refine it. Result is a 0..100 team score, also expressed out of 10.
-const WEIGHTS = { players: 0.6, chemistry: 0.25, balance: 0.15 }
+// Score curve. Player quality is the backbone (mapped so realistic squad
+// averages of ~68–92 spread across most of the 0–10 range instead of clustering
+// near the top), while chemistry and balance nudge it up or down. Tuned so an
+// all-elite XI lands ~9.5+, a typical mixed squad ~7–8, and a low-rated or
+// poorly-fit squad can fall to 5–6 or below.
+const SCORE = {
+  avgFloor: 60, // squad average at/below this scores ~0 from the base term
+  avgDivisor: 3.4, // larger = flatter curve; ~3.4 puts a 90-avg squad near 8.8
+  chemPivot: 60,
+  chemSpan: 40,
+  chemSwing: 1.0, // ± points from chemistry
+  balancePivot: 70,
+  balanceSpan: 30,
+  balanceSwing: 0.6, // ± points from balance
+}
 
 function clamp(value, min, max) {
   return Math.max(min, Math.min(max, value))
@@ -94,11 +106,11 @@ export function calculateRating(squad, missedPlayers = []) {
   const lines = lineRatings(squad)
   const balance = squadBalance(lines)
 
-  const score100 =
-    playerAvg * WEIGHTS.players +
-    chemistry * WEIGHTS.chemistry +
-    balance * WEIGHTS.balance
-  const score10 = clamp(score100 / 10, 0, 10)
+  const base = (playerAvg - SCORE.avgFloor) / SCORE.avgDivisor
+  const chemMod = ((chemistry - SCORE.chemPivot) / SCORE.chemSpan) * SCORE.chemSwing
+  const balanceMod =
+    ((balance - SCORE.balancePivot) / SCORE.balanceSpan) * SCORE.balanceSwing
+  const score10 = clamp(base + chemMod + balanceMod, 0, 10)
 
   // Best value = strongest player from a low rarity tier (a genuine pack gem).
   const valueCandidates = squad
